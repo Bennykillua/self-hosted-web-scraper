@@ -5,6 +5,7 @@ __pycache__/
 *.pyc
 *.csv
 *.html
-EOFscraper_protected_sites.py
+EOF
+scraper_protected_sites.py
 scraper_js_render.py
 scraper_static_page.py
