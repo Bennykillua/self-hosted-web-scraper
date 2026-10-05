@@ -187,6 +187,25 @@ if __name__ == "__main__":
             print("cookies:", list(r.cookies.keys()))
             print("title:", BeautifulSoup(r.text, "lxml").title)
 
+print("\nRate-limiting example")
+
+RATE_LIMIT_URL = "https://api.github.com/users/Python"
+
+if __name__ == "__main__":
+    with requests.Session() as session:
+        for i in range(1, 71):
+            r = session.get(RATE_LIMIT_URL, headers=build_headers(), timeout=15)
+            remaining = r.headers.get("x-ratelimit-remaining")
+
+            if i == 1 or i % 10 == 0 or r.status_code != 200:
+                print(f"request {i}: {r.status_code} | remaining: {remaining}")
+
+            if r.status_code != 200:
+                print("limit:", r.headers.get("x-ratelimit-limit"))
+                print("reset:", r.headers.get("x-ratelimit-reset"))
+                break
+
+
 print("\nTesting rendered fetch with Playwright")
 
 if __name__ == "__main__":

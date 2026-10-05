@@ -40,3 +40,4 @@ for url in TARGETS:
         print(f"\n{url}")
         print("bytes:", len(html))
         print("title:", soup.title)
+
