@@ -144,4 +144,5 @@ Responses from live sites vary by IP, session, time, and each site's configurati
 
 ## Related article
 
-This repository accompanies the Zenrows article: [How to Build a Self-Hosted Web Scraper from Scratch]()
+This repository accompanies the Zenrows article: [How to Build a Self-Hosted Web Scraper from Scratch](
+https://www.zenrows.com/blog/how-to-build-a-self-hosted-web-scraper-from-scratch)
